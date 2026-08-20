@@ -26,6 +26,9 @@
   --color-primary-active: #103924;
   --color-primary-highlight: #d7e2cd;
 
+  /* Maroon */
+  --color-maroon: #8B1A1A;
+
   /* Warning */
   --color-warning: #93531c;
   --color-warning-hover: #713e14;
@@ -94,6 +97,8 @@
   --color-primary-hover: #91d3ac;
   --color-primary-active: #a6dfbe;
   --color-primary-highlight: #263626;
+
+  --color-maroon: #B22222;
 
   --color-warning: #d99a5f;
   --color-warning-hover: #e2ac78;
@@ -210,6 +215,11 @@ h3 {
   color: var(--color-text-muted);
   max-width: 46ch;
   margin-top: var(--space-4);
+}
+
+/* Maroon text */
+.maroon {
+  color: var(--color-maroon);
 }
 
 /* ==========================================================================
