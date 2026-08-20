@@ -505,7 +505,7 @@ h3 {
 .iphone-frame {
   width: 100%;
   max-width: 340px;
-  aspect-ratio: 9 / 19.5; /* increased height */
+  aspect-ratio: 9 / 19.5;
   background: #1a1a1a;
   border-radius: 44px;
   padding: 12px;
@@ -567,6 +567,29 @@ h3 {
 }
 .demo-feature-item div {
   color: var(--color-text-muted);
+}
+
+/* New note about laptop + 1:1 */
+.demo-note {
+  margin-top: var(--space-8);
+  max-width: 60ch;
+  margin-inline: auto;
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-surface-offset);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-divider);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.6;
+}
+.demo-note a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.demo-note a:hover {
+  text-decoration: underline;
 }
 
 /* ==========================================================================
