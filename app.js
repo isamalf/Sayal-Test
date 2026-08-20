@@ -87,18 +87,22 @@
     });
   }
 
-  /* ---------- Hero growth-path draw-in ---------- */
+  /* ---------- Hero growth-path draw-in (fixed for mobile – one‑time draw) ---------- */
   var drawPath = document.querySelector('[data-draw-path]');
+  var stockDrawn = false; // prevent re‑triggering on mobile
+
   if (drawPath) {
     var length = drawPath.getTotalLength();
     drawPath.style.strokeDasharray = length;
     drawPath.style.strokeDashoffset = length;
     drawPath.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(0.16,1,0.3,1)';
+
     if ('IntersectionObserver' in window) {
       var pathObserver = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !stockDrawn) {
+              stockDrawn = true;
               requestAnimationFrame(function () {
                 drawPath.style.strokeDashoffset = '0';
               });
@@ -114,7 +118,7 @@
     }
   }
 
-  /* ---------- Early access form (Formspree) ---------- */
+  /* ---------- Contact form (Formspree) ---------- */
   var form = document.getElementById('interest-form');
   var statusEl = document.querySelector('[data-form-status]');
   var successEl = document.querySelector('[data-form-success]');
@@ -168,7 +172,6 @@
       submitBtn.disabled = true;
       if (submitLabel) submitLabel.textContent = 'Sending…';
 
-      // Gather form data
       var formData = new FormData(form);
       var data = {
         name: formData.get('name'),
@@ -177,7 +180,6 @@
         message: formData.get('message') || ''
       };
 
-      // Send to Formspree
       fetch('https://formspree.io/f/xwleypvo', {
         method: 'POST',
         headers: {
@@ -195,13 +197,13 @@
         })
         .then(function () {
           submitBtn.disabled = false;
-          if (submitLabel) submitLabel.textContent = 'Register interest';
+          if (submitLabel) submitLabel.textContent = 'Send message';
           form.style.display = 'none';
           if (successEl) successEl.classList.add('is-visible');
         })
         .catch(function () {
           submitBtn.disabled = false;
-          if (submitLabel) submitLabel.textContent = 'Register interest';
+          if (submitLabel) submitLabel.textContent = 'Send message';
           setStatus('Something went wrong. Please try again.', 'error');
         });
     });
