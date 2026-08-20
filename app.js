@@ -87,37 +87,6 @@
     });
   }
 
-  /* ---------- Hero growth-path draw-in (fixed for mobile – one‑time draw) ---------- */
-  var drawPath = document.querySelector('[data-draw-path]');
-  var stockDrawn = false; // prevent re‑triggering on mobile
-
-  if (drawPath) {
-    var length = drawPath.getTotalLength();
-    drawPath.style.strokeDasharray = length;
-    drawPath.style.strokeDashoffset = length;
-    drawPath.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(0.16,1,0.3,1)';
-
-    if ('IntersectionObserver' in window) {
-      var pathObserver = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting && !stockDrawn) {
-              stockDrawn = true;
-              requestAnimationFrame(function () {
-                drawPath.style.strokeDashoffset = '0';
-              });
-              pathObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.3 }
-      );
-      pathObserver.observe(drawPath);
-    } else {
-      drawPath.style.strokeDashoffset = '0';
-    }
-  }
-
   /* ---------- Contact form (Formspree) ---------- */
   var form = document.getElementById('interest-form');
   var statusEl = document.querySelector('[data-form-status]');
