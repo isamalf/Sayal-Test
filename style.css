@@ -217,11 +217,6 @@ h3 {
   margin-top: var(--space-4);
 }
 
-/* Maroon text */
-.maroon {
-  color: var(--color-maroon);
-}
-
 /* ==========================================================================
    Skip Link
    ========================================================================== */
@@ -992,21 +987,6 @@ h3 {
 .form-success p {
   color: var(--color-text-muted);
   margin: 0 auto;
-}
-
-/* ==========================================================================
-   FAQ Link
-   ========================================================================== */
-
-.faq-link {
-  color: var(--color-primary) !important;
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
-}
-.faq-link:hover {
-  border-bottom-color: var(--color-primary);
 }
 
 /* ==========================================================================
