@@ -375,6 +375,48 @@ h3 {
   height: 16px;
 }
 
+/* ----- Infinite glow for "Try the demo" button ----- */
+.btn-demo-glow {
+  position: relative;
+  border-color: var(--color-primary) !important;
+  color: var(--color-primary) !important;
+  background: transparent;
+  transition: none;
+}
+.btn-demo-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius-md);
+  padding: 2px;
+  background: conic-gradient(
+    from 0deg,
+    var(--color-primary),
+    var(--color-gold),
+    var(--color-primary),
+    var(--color-gold),
+    var(--color-primary)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: spin-border 3s linear infinite;
+}
+@keyframes spin-border {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.btn-demo-glow:hover {
+  background: var(--color-primary) !important;
+  color: var(--color-text-inverse) !important;
+  border-color: var(--color-primary) !important;
+}
+.btn-demo-glow:hover::before {
+  animation-duration: 0.8s; /* speed up on hover */
+}
+
 /* ==========================================================================
    Hero
    ========================================================================== */
@@ -501,11 +543,11 @@ h3 {
   margin-top: var(--space-8);
 }
 
-/* iPhone Frame – no shadow, realistic size */
+/* iPhone Frame – no shadow, realistic size, shorter aspect ratio */
 .iphone-frame {
   width: 100%;
   max-width: 340px;
-  aspect-ratio: 9 / 19.5;
+  aspect-ratio: 9 / 17; /* reduced height for better proportions */
   background: #1a1a1a;
   border-radius: 44px;
   padding: 12px;
