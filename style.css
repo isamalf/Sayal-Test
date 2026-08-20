@@ -476,7 +476,7 @@ h3 {
 }
 
 /* ==========================================================================
-   Demo Section (under hero)
+   Demo Section
    ========================================================================== */
 
 .demo-section {
@@ -492,7 +492,6 @@ h3 {
   margin-bottom: var(--space-12);
 }
 
-/* Demo note – placed above the phone, brand colours */
 .demo-note {
   margin-top: var(--space-6);
   max-width: 56ch;
@@ -530,7 +529,6 @@ h3 {
   margin-top: var(--space-8);
 }
 
-/* iPhone Frame – no shadow, realistic size, slightly wider */
 .iphone-frame {
   width: 100%;
   max-width: 341px;
@@ -839,6 +837,12 @@ h3 {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
 }
+.contact-note svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
 .contact-note a {
   color: var(--color-primary);
   font-weight: 600;
@@ -847,14 +851,7 @@ h3 {
 .contact-note a:hover {
   text-decoration: underline;
 }
-.contact-note svg {
-  width: 18px;
-  height: 18px;
-  color: var(--color-primary);
-  flex-shrink: 0;
-}
 
-/* Reuse form-card, form-row, etc. from earlier */
 .form-card {
   background: var(--color-surface);
   border: 1px solid oklch(from var(--color-text) l c h / 0.08);
@@ -985,6 +982,21 @@ h3 {
 .form-success p {
   color: var(--color-text-muted);
   margin: 0 auto;
+}
+
+/* ==========================================================================
+   FAQ Link
+   ========================================================================== */
+
+.faq-link {
+  color: var(--color-primary) !important;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.faq-link:hover {
+  border-bottom-color: var(--color-primary);
 }
 
 /* ==========================================================================
