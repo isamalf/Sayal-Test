@@ -87,7 +87,7 @@
     });
   }
 
-  /* ---------- Profit counter animation (setInterval approach – works on all devices) ---------- */
+  /* ---------- Profit counter animation (setInterval – works on all devices) ---------- */
   function animateProfitCounter() {
     var counter = document.getElementById('profit-counter');
     if (!counter) return;
@@ -109,7 +109,8 @@
         current = target;
         clearInterval(timer);
       }
-      counter.textContent = current.toFixed(1);
+      // Show the full "18.4%" with the percent sign
+      counter.textContent = current.toFixed(1) + '%';
     }, interval);
   }
 
