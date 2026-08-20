@@ -375,46 +375,25 @@ h3 {
   height: 16px;
 }
 
-/* ----- Infinite glow for "Try the demo" button ----- */
+/* ----- Subtle pulsing glow for "Try the demo" button ----- */
 .btn-demo-glow {
   position: relative;
   border-color: var(--color-primary) !important;
   color: var(--color-primary) !important;
   background: transparent;
-  transition: none;
+  transition: box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 0 0 rgba(31, 94, 62, 0.2);
+  animation: pulse-glow 2.5s ease-in-out infinite;
 }
-.btn-demo-glow::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: var(--radius-md);
-  padding: 2px;
-  background: conic-gradient(
-    from 0deg,
-    var(--color-primary),
-    var(--color-gold),
-    var(--color-primary),
-    var(--color-gold),
-    var(--color-primary)
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  animation: spin-border 3s linear infinite;
-}
-@keyframes spin-border {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(31, 94, 62, 0.15); }
+  50% { box-shadow: 0 0 0 8px rgba(31, 94, 62, 0.05); }
 }
 .btn-demo-glow:hover {
   background: var(--color-primary) !important;
   color: var(--color-text-inverse) !important;
   border-color: var(--color-primary) !important;
-}
-.btn-demo-glow:hover::before {
-  animation-duration: 0.8s; /* speed up on hover */
+  animation-play-state: paused;
 }
 
 /* ==========================================================================
@@ -543,11 +522,11 @@ h3 {
   margin-top: var(--space-8);
 }
 
-/* iPhone Frame – no shadow, realistic size, shorter aspect ratio */
+/* iPhone Frame – no shadow, realistic size, slightly taller */
 .iphone-frame {
   width: 100%;
   max-width: 340px;
-  aspect-ratio: 9 / 17; /* reduced height for better proportions */
+  aspect-ratio: 9 / 18; /* increased height */
   background: #1a1a1a;
   border-radius: 44px;
   padding: 12px;
@@ -558,37 +537,7 @@ h3 {
   flex-shrink: 0;
 }
 
-.iphone-dynamic-island {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 32px;
-  background: #1a1a1a;
-  border-radius: 20px;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-.iphone-dynamic-island::before {
-  content: '';
-  width: 10px;
-  height: 10px;
-  background: #1a1a1a;
-  border-radius: 50%;
-  border: 1px solid #2a2a2a;
-}
-.iphone-dynamic-island::after {
-  content: '';
-  width: 50px;
-  height: 6px;
-  background: #1a1a1a;
-  border-radius: 10px;
-  border: 1px solid #2a2a2a;
-}
+/* No notch – removed entirely */
 
 .iphone-screen {
   flex: 1;
@@ -648,6 +597,8 @@ h3 {
   font-size: var(--text-sm);
   color: var(--color-text-faint);
   letter-spacing: 0.02em;
+  text-align: center; /* ensure centering */
+  width: 100%;
 }
 
 /* ==========================================================================
