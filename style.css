@@ -63,7 +63,7 @@
 
   /* Shadows — soft, not blocky */
   --shadow-soft: 0 20px 60px rgba(0,0,0,0.08), 0 8px 20px rgba(0,0,0,0.04);
-  --shadow-iphone: 0 30px 80px rgba(0,0,0,0.12), 0 10px 30px rgba(0,0,0,0.05);
+  --shadow-iphone: 0 40px 80px rgba(0,0,0,0.12), 0 15px 40px rgba(0,0,0,0.06);
 
   /* Content widths */
   --content-narrow: 640px;
@@ -117,7 +117,7 @@
   --color-gold-highlight: #3a3120;
 
   --shadow-soft: 0 20px 60px rgba(0,0,0,0.25);
-  --shadow-iphone: 0 30px 80px rgba(0,0,0,0.35);
+  --shadow-iphone: 0 40px 80px rgba(0,0,0,0.35);
 }
 
 /* ==========================================================================
@@ -390,7 +390,7 @@ h3 {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 4fr 6fr;
   gap: var(--space-12);
   align-items: center;
 }
@@ -429,7 +429,7 @@ h3 {
   color: var(--color-text-faint);
 }
 
-/* ====== iPhone 14 Pro Style Frame ====== */
+/* ====== Large iPhone 14 Pro Style Frame ====== */
 .hero-iphone {
   display: flex;
   flex-direction: column;
@@ -443,18 +443,18 @@ h3 {
   color: var(--color-text-muted);
   letter-spacing: 0.05em;
   background: var(--color-surface-offset);
-  padding: 0.3rem 1.2rem;
+  padding: 0.4rem 1.6rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--color-divider);
 }
 
 .iphone-frame {
   width: 100%;
-  max-width: 320px;
+  max-width: 420px;
   aspect-ratio: 9 / 19.5;
   background: #1a1a1a;
-  border-radius: 48px;
-  padding: 12px;
+  border-radius: 52px;
+  padding: 14px;
   box-shadow: var(--shadow-iphone);
   position: relative;
   display: flex;
@@ -465,31 +465,31 @@ h3 {
 /* Dynamic island (iPhone 14 Pro style) */
 .iphone-dynamic-island {
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
-  height: 32px;
+  width: 130px;
+  height: 34px;
   background: #1a1a1a;
-  border-radius: 20px;
+  border-radius: 22px;
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
 }
 .iphone-dynamic-island::before {
   content: '';
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background: #1a1a1a;
   border-radius: 50%;
   border: 1px solid #2a2a2a;
 }
 .iphone-dynamic-island::after {
   content: '';
-  width: 50px;
-  height: 6px;
+  width: 55px;
+  height: 7px;
   background: #1a1a1a;
   border-radius: 10px;
   border: 1px solid #2a2a2a;
@@ -497,7 +497,7 @@ h3 {
 
 .iphone-screen {
   flex: 1;
-  border-radius: 36px;
+  border-radius: 38px;
   overflow: hidden;
   background: #fff;
 }
@@ -510,13 +510,21 @@ h3 {
 
 .iphone-home-indicator {
   position: absolute;
-  bottom: 12px;
+  bottom: 14px;
   left: 50%;
   transform: translateX(-50%);
-  width: 130px;
+  width: 140px;
   height: 5px;
   background: rgba(255,255,255,0.2);
   border-radius: 10px;
+}
+
+.iphone-caption {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-align: center;
+  margin-top: var(--space-2);
+  letter-spacing: 0.02em;
 }
 
 /* ==========================================================================
@@ -1025,7 +1033,7 @@ h3 {
     order: -1;
   }
   .iphone-frame {
-    max-width: 280px;
+    max-width: 320px;
   }
   .value-strip-grid {
     grid-template-columns: 1fr;
@@ -1105,12 +1113,15 @@ h3 {
     align-items: flex-start;
   }
   .iphone-frame {
-    max-width: 220px;
+    max-width: 280px;
   }
 }
 
 @media (max-width: 480px) {
   .value-strip-grid {
     grid-template-columns: 1fr;
+  }
+  .iphone-frame {
+    max-width: 240px;
   }
 }
