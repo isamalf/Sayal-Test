@@ -97,26 +97,40 @@
             <span>Built for Qatar residents – early access opening soon</span>
           </div>
         </div>
-        <!-- Hero graphic remains, but phone is moved below -->
+
+        <!-- Updated Hero Visual – stock chart upward trend -->
         <div class="hero-visual" data-reveal>
           <svg viewBox="0 0 480 520" fill="none" aria-hidden="true">
             <rect x="0" y="0" width="480" height="520" rx="28" fill="var(--color-surface-offset)" />
             <rect x="0" y="0" width="480" height="520" rx="28" fill="url(#dot-grid)" style="color: var(--color-text-faint)" />
-            <path d="M48 420 C130 440 150 330 210 300 C270 270 270 190 330 160 C370 140 400 110 434 66"
-              stroke="var(--color-border)" stroke-width="30" stroke-linecap="round" fill="none" opacity="0.5" />
-            <path data-draw-path d="M48 420 C130 440 150 330 210 300 C270 270 270 190 330 160 C370 140 400 110 434 66"
-              stroke="var(--color-primary)" stroke-width="4" stroke-linecap="round" fill="none" />
-            <circle cx="210" cy="300" r="7" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
-            <circle cx="330" cy="160" r="7" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
-            <circle cx="434" cy="66" r="10" fill="var(--color-primary)" />
+
+            <!-- Upward stock chart line -->
+            <path d="M60 400 L120 350 L180 370 L220 280 L280 200 L340 230 L400 120 L440 70"
+              stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            <!-- Shaded area under the curve -->
+            <path d="M60 400 L120 350 L180 370 L220 280 L280 200 L340 230 L400 120 L440 70 L440 420 L60 420 Z"
+              fill="var(--color-primary)" opacity="0.1" />
+
+            <!-- Markers on key points -->
+            <circle cx="120" cy="350" r="6" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
+            <circle cx="220" cy="280" r="6" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
+            <circle cx="280" cy="200" r="6" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
+            <circle cx="400" cy="120" r="6" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
+            <circle cx="440" cy="70" r="8" fill="var(--color-primary)" />
+
+            <!-- Small labels -->
+            <text x="60" y="420" font-family="var(--font-body)" font-size="12" fill="var(--color-text-faint)">Jan</text>
+            <text x="440" y="90" font-family="var(--font-body)" font-size="12" fill="var(--color-primary)">Now</text>
           </svg>
+
+          <!-- Small card showing portfolio growth -->
           <div class="hero-card">
             <div class="hero-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
             </div>
             <div>
-              <strong>Villa deposit</strong>
-              <span>Goal · 64% funded</span>
+              <strong>+18.4%</strong>
+              <span>Portfolio growth (YTD)</span>
             </div>
           </div>
         </div>
@@ -134,7 +148,7 @@
 
         <div class="demo-container" data-reveal>
           <div class="iphone-frame">
-            <div class="iphone-dynamic-island"></div>
+            <!-- No notch -->
             <div class="iphone-screen">
               <iframe src="http://localhost:56629/" frameborder="0" allow="geolocation; microphone; camera; midi; encrypted-media" loading="lazy"></iframe>
             </div>
