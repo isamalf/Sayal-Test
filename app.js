@@ -87,49 +87,51 @@
     });
   }
 
-  /* ---------- Profit counter animation ---------- */
+  /* ---------- Profit counter animation (setInterval approach – works on all devices) ---------- */
   function animateProfitCounter() {
     var counter = document.getElementById('profit-counter');
     if (!counter) return;
+
+    // Only run once
+    if (counter.dataset.animated === 'true') return;
+    counter.dataset.animated = 'true';
+
     var target = 18.4;
-    var duration = 1500; // ms
-    var startTime = null;
+    var current = 0;
+    var duration = 1800; // ms
+    var interval = 20; // ms per step
+    var steps = duration / interval;
+    var increment = target / steps;
 
-    function step(timestamp) {
-      if (!startTime) startTime = timestamp;
-      var progress = Math.min((timestamp - startTime) / duration, 1);
-      // easeOutQuart
-      var eased = 1 - Math.pow(1 - progress, 4);
-      var current = eased * target;
-      counter.textContent = current.toFixed(1);
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        counter.textContent = target.toFixed(1) + '';
+    var timer = setInterval(function () {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
       }
-    }
-
-    // Observe when the hero becomes visible
-    var heroVisual = document.querySelector('.hero-visual');
-    if (heroVisual) {
-      var revealObserver = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              // Start counter once
-              requestAnimationFrame(step);
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.3 }
-      );
-      revealObserver.observe(heroVisual);
-    }
+      counter.textContent = current.toFixed(1);
+    }, interval);
   }
 
-  // Run after a small delay to ensure DOM is ready
-  setTimeout(animateProfitCounter, 200);
+  // Use IntersectionObserver to start counter when hero becomes visible
+  var heroVisual = document.querySelector('.hero-visual');
+  if (heroVisual && 'IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateProfitCounter();
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    revealObserver.observe(heroVisual);
+  } else if (heroVisual) {
+    // Fallback: run immediately
+    animateProfitCounter();
+  }
 
   /* ---------- Contact form (Formspree) ---------- */
   var form = document.getElementById('interest-form');
