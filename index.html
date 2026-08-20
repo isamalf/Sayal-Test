@@ -83,7 +83,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Coming soon to Qatar</p>
+          <p class="eyebrow">Coming soon to <span class="maroon">Qatar</span></p>
           <h1>Invest in <em>U.S. stocks</em> – from your phone.</h1>
           <p>
             Invest in US stocks and ETFs with zero minimums. Fund instantly in QAR, trade with ease – whether you're a first‑timer or a seasoned trader.
@@ -96,11 +96,11 @@
             <a href="#demo" class="btn btn-secondary">Try the demo</a>
           </div>
           <div class="hero-trust">
-            <span>Built for Qatar residents – early access opening soon</span>
+            <span>Built for <span class="maroon">Qatar</span> residents – early access opening soon</span>
           </div>
         </div>
 
-        <!-- Hero Visual – static stock chart (no animation) -->
+        <!-- Hero Visual – static stock chart with profit counter -->
         <div class="hero-visual" data-reveal>
           <svg viewBox="0 0 480 520" fill="none" aria-hidden="true">
             <rect x="0" y="0" width="480" height="520" rx="28" fill="var(--color-surface-offset)" />
@@ -126,13 +126,13 @@
             <text x="440" y="90" font-family="var(--font-body)" font-size="12" fill="var(--color-primary)">Now</text>
           </svg>
 
-          <!-- Small card showing portfolio growth -->
+          <!-- Profit card with animated counter -->
           <div class="hero-card">
             <div class="hero-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
             </div>
             <div>
-              <strong>+18.4%</strong>
+              <strong><span id="profit-counter">0</span>%</strong>
               <span>Portfolio growth (YTD)</span>
             </div>
           </div>
@@ -342,10 +342,6 @@
               <label for="email">Email</label>
               <input type="email" id="email" name="email" placeholder="you@example.com" required />
               <span class="form-error">Please enter a valid email.</span>
-            </div>
-            <div class="form-row">
-              <label for="goal">What are you planning to invest in? (optional)</label>
-              <input type="text" id="goal" name="goal" placeholder="Stocks, ETFs, options..." />
             </div>
             <div class="form-row">
               <label for="message">Message</label>
