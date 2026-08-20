@@ -169,7 +169,6 @@
       submitBtn.disabled = true;
       if (submitLabel) submitLabel.textContent = 'Sending…';
 
-      // No fallback – must have a valid access key
       if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
         setStatus('Please set your Web3Forms access key in the form.', 'error');
         submitBtn.disabled = false;
