@@ -392,7 +392,7 @@ h3 {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-12);
   align-items: center;
 }
@@ -430,67 +430,16 @@ h3 {
   font-size: var(--text-xs);
   color: var(--color-text-faint);
 }
-.hero-trust-dots {
-  display: flex;
-}
-.hero-trust-dots span {
-  width: 28px;
-  height: 28px;
-  border-radius: var(--radius-full);
-  background: var(--color-surface-offset-2);
-  border: 2px solid var(--color-bg);
-  margin-left: -8px;
-}
-.hero-trust-dots span:first-child {
-  margin-left: 0;
-}
 
-.hero-visual {
-  position: relative;
-  aspect-ratio: 1 / 1.05;
-}
-.hero-visual svg {
-  width: 100%;
-  height: 100%;
-}
-
-.hero-card {
-  position: absolute;
-  bottom: 6%;
-  left: 4%;
-  background: var(--color-surface);
-  border: 1px solid oklch(from var(--color-text) l c h / 0.08);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: var(--space-4) var(--space-5);
+/* Hero phone demo */
+.hero-demo {
   display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  max-width: 220px;
-}
-.hero-card-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-md);
-  background: var(--color-primary-highlight);
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  align-items: center;
 }
-.hero-card-icon svg {
-  width: 18px;
-  height: 18px;
-}
-.hero-card strong {
-  display: block;
-  font-size: var(--text-sm);
-  color: var(--color-text);
-}
-.hero-card span {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
+.hero-demo .demo-phone {
+  max-width: 320px;
+  width: 100%;
 }
 
 /* ==========================================================================
@@ -1003,10 +952,8 @@ h3 {
     grid-template-columns: 1fr;
     gap: var(--space-10);
   }
-  .hero-visual {
+  .hero-demo {
     order: -1;
-    max-width: 420px;
-    margin-inline: auto;
   }
   .value-strip-grid {
     grid-template-columns: 1fr;
@@ -1097,7 +1044,7 @@ h3 {
 }
 
 /* ==========================================================================
-   Interactive Demo
+   Interactive Demo (standalone section)
    ========================================================================== */
 
 .demo-wrapper {
