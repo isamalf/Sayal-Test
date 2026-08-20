@@ -9,7 +9,10 @@
 
   function paintToggleIcon() {
     if (!themeToggle) return;
-    themeToggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+    themeToggle.setAttribute(
+      'aria-label',
+      'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode'
+    );
     themeToggle.innerHTML =
       theme === 'dark'
         ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
@@ -27,8 +30,10 @@
   /* ---------- Mobile menu ---------- */
   var menuToggle = document.querySelector('[data-menu-toggle]');
   var mobileMenu = document.querySelector('[data-mobile-menu]');
-  var hamburgerIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>';
-  var closeIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>';
+  var hamburgerIcon =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>';
+  var closeIcon =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>';
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', function () {
       var isOpen = mobileMenu.classList.toggle('is-open');
@@ -114,92 +119,17 @@
     }
   }
 
-  /* ---------- Early access form ---------- */
+  /* ---------- Early access form (Formspree feedback) ---------- */
   var form = document.getElementById('interest-form');
   var statusEl = document.querySelector('[data-form-status]');
-  var successEl = document.querySelector('[data-form-success]');
   var submitLabel = document.querySelector('[data-submit-label]');
-
-  function setStatus(message, type) {
-    if (!statusEl) return;
-    statusEl.textContent = message;
-    statusEl.className = 'form-status is-visible ' + type;
-  }
-
-  function clearErrors() {
-    if (!form) return;
-    form.querySelectorAll('.form-row').forEach(function (row) {
-      row.classList.remove('has-error');
-    });
-  }
-
-  function validate() {
-    var valid = true;
-    var name = form.querySelector('#name');
-    var email = form.querySelector('#email');
-    if (!name.value.trim()) {
-      name.closest('.form-row').classList.add('has-error');
-      valid = false;
-    }
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value.trim())) {
-      email.closest('.form-row').classList.add('has-error');
-      valid = false;
-    }
-    return valid;
-  }
-
   if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      clearErrors();
-
-      var honeypot = form.querySelector('input[name="botcheck"]');
-      if (honeypot && honeypot.checked) {
-        return;
+    form.addEventListener('submit', function () {
+      if (submitLabel) submitLabel.textContent = 'Sent';
+      if (statusEl) {
+        statusEl.textContent = 'Sent';
+        statusEl.className = 'form-status is-visible success';
       }
-
-      if (!validate()) {
-        setStatus('Please fill in the required fields above.', 'error');
-        return;
-      }
-
-      var accessKey = form.querySelector('input[name="access_key"]').value;
-      var submitBtn = form.querySelector('.form-submit');
-      submitBtn.disabled = true;
-      if (submitLabel) submitLabel.textContent = 'Sending…';
-
-      if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
-        setStatus('Please set your Web3Forms access key in the form.', 'error');
-        submitBtn.disabled = false;
-        if (submitLabel) submitLabel.textContent = 'Register interest';
-        return;
-      }
-
-      var formData = new FormData(form);
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: formData,
-      })
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          submitBtn.disabled = false;
-          if (submitLabel) submitLabel.textContent = 'Register interest';
-          if (data.success) {
-            form.style.display = 'none';
-            if (successEl) successEl.classList.add('is-visible');
-          } else {
-            setStatus('Something went wrong. Please try again.', 'error');
-          }
-        })
-        .catch(function () {
-          submitBtn.disabled = false;
-          if (submitLabel) submitLabel.textContent = 'Register interest';
-          setStatus('Something went wrong. Please try again.', 'error');
-        });
     });
   }
 
