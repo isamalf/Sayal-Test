@@ -52,6 +52,7 @@
         <a href="#how-it-works">How it works</a>
         <a href="#why-sayal">Why Sayal</a>
         <a href="#opportunity">The opportunity</a>
+        <a href="#demo">Try the demo</a>
         <a href="#faq">FAQ</a>
       </div>
 
@@ -70,12 +71,13 @@
     <a href="#how-it-works" data-menu-link>How it works</a>
     <a href="#why-sayal" data-menu-link>Why Sayal</a>
     <a href="#opportunity" data-menu-link>The opportunity</a>
+    <a href="#demo" data-menu-link>Try the demo</a>
     <a href="#faq" data-menu-link>FAQ</a>
     <a href="#early-access" class="btn btn-primary" data-menu-link>Get early access</a>
   </div>
 
   <main id="main">
-    <!-- ================= HERO with iPhone + App ================= -->
+    <!-- ================= HERO ================= -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -89,16 +91,48 @@
               Get early access
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
-            <a href="#how-it-works" class="btn btn-secondary">See how it works</a>
+            <a href="#demo" class="btn btn-secondary">Try the demo</a>
           </div>
           <div class="hero-trust">
             <span>Built for Qatar residents – early access opening soon</span>
           </div>
         </div>
+        <!-- Hero graphic remains, but phone is moved below -->
+        <div class="hero-visual" data-reveal>
+          <svg viewBox="0 0 480 520" fill="none" aria-hidden="true">
+            <rect x="0" y="0" width="480" height="520" rx="28" fill="var(--color-surface-offset)" />
+            <rect x="0" y="0" width="480" height="520" rx="28" fill="url(#dot-grid)" style="color: var(--color-text-faint)" />
+            <path d="M48 420 C130 440 150 330 210 300 C270 270 270 190 330 160 C370 140 400 110 434 66"
+              stroke="var(--color-border)" stroke-width="30" stroke-linecap="round" fill="none" opacity="0.5" />
+            <path data-draw-path d="M48 420 C130 440 150 330 210 300 C270 270 270 190 330 160 C370 140 400 110 434 66"
+              stroke="var(--color-primary)" stroke-width="4" stroke-linecap="round" fill="none" />
+            <circle cx="210" cy="300" r="7" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
+            <circle cx="330" cy="160" r="7" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
+            <circle cx="434" cy="66" r="10" fill="var(--color-primary)" />
+          </svg>
+          <div class="hero-card">
+            <div class="hero-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <strong>Villa deposit</strong>
+              <span>Goal · 64% funded</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Large iPhone with live app -->
-        <div class="hero-iphone" data-reveal>
-          <div class="iphone-label">Try the app demo</div>
+    <!-- ================= DEMO SECTION (directly under hero) ================= -->
+    <section id="demo" class="demo-section">
+      <div class="container demo-wrapper">
+        <div class="demo-header-text">
+          <p class="eyebrow" style="text-align:center;">Interactive demo</p>
+          <h2 class="section-title" data-reveal style="text-align:center; max-width: none;">See the app in action</h2>
+          <p class="section-lede" data-reveal style="text-align:center; max-width: 60ch; margin-inline: auto;">Explore the full Sayal experience – fund, trade, and track all in one place.</p>
+        </div>
+
+        <div class="demo-container" data-reveal>
           <div class="iphone-frame">
             <div class="iphone-dynamic-island"></div>
             <div class="iphone-screen">
@@ -106,8 +140,22 @@
             </div>
             <div class="iphone-home-indicator"></div>
           </div>
-          <div class="iphone-caption">Interactive demo – scroll, tap, explore</div>
+          <div class="demo-features">
+            <div class="demo-feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4.5 8-11.5V5l-8-3-8 3v5.5C4 17.5 12 22 12 22Z"/></svg>
+              <div><strong>Fractional shares</strong> – invest in any US stock from QAR 10.</div>
+            </div>
+            <div class="demo-feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <div><strong>Real‑time trading</strong> – buy and sell instantly.</div>
+            </div>
+            <div class="demo-feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
+              <div><strong>QAR deposits</strong> – fund with riyals, trade in dollars.</div>
+            </div>
+          </div>
         </div>
+        <p class="demo-caption">Interactive – scroll, tap, explore the app live</p>
       </div>
     </section>
 
@@ -350,6 +398,7 @@
       <div class="footer-links">
         <a href="#how-it-works">How it works</a>
         <a href="#opportunity">The opportunity</a>
+        <a href="#demo">Try the demo</a>
         <a href="#early-access">Get early access</a>
       </div>
       <p class="footer-meta">© 2026 Sayal. Invest in US stocks, from Qatar.</p>
