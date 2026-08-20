@@ -530,10 +530,10 @@ h3 {
   margin-top: var(--space-8);
 }
 
-/* iPhone Frame – no shadow, realistic size, taller */
+/* iPhone Frame – no shadow, realistic size, slightly wider */
 .iphone-frame {
   width: 100%;
-  max-width: 340px;
+  max-width: 341px;
   aspect-ratio: 9 / 19.5;
   background: #1a1a1a;
   border-radius: 44px;
@@ -813,28 +813,25 @@ h3 {
 }
 
 /* ==========================================================================
-   Early Access Form
+   Contact Section
    ========================================================================== */
 
-.early-access {
-  position: relative;
-}
-.early-access-grid {
+.contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-16);
   align-items: start;
 }
-.early-access-copy h2 {
+.contact-copy h2 {
   font-size: var(--text-xl);
   max-width: 20ch;
 }
-.early-access-copy p {
+.contact-copy p {
   color: var(--color-text-muted);
   margin-top: var(--space-4);
   max-width: 42ch;
 }
-.early-access-note {
+.contact-note {
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -842,21 +839,22 @@ h3 {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
 }
-.early-access-note a {
+.contact-note a {
   color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
 }
-.early-access-note a:hover {
+.contact-note a:hover {
   text-decoration: underline;
 }
-.early-access-note svg {
+.contact-note svg {
   width: 18px;
   height: 18px;
   color: var(--color-primary);
   flex-shrink: 0;
 }
 
+/* Reuse form-card, form-row, etc. from earlier */
 .form-card {
   background: var(--color-surface);
   border: 1px solid oklch(from var(--color-text) l c h / 0.08);
@@ -1115,7 +1113,7 @@ h3 {
   .opportunity-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .early-access-grid {
+  .contact-grid {
     grid-template-columns: 1fr;
     gap: var(--space-10);
   }
