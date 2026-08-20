@@ -38,13 +38,13 @@
   --color-error-active: #571f1f;
   --color-error-highlight: #e3d1cd;
 
-  /* Success */
+  /* Success (reuses primary family for consistency) */
   --color-success: #2f7a4f;
   --color-success-hover: #205c3a;
   --color-success-active: #144228;
   --color-success-highlight: #d5e5d3;
 
-  /* Gold */
+  /* Gold - used sparingly for the "opportunity" stat highlight */
   --color-gold: #a9812f;
   --color-gold-hover: #8a6821;
   --color-gold-active: #6b4f18;
@@ -61,10 +61,10 @@
   --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Shadows */
+  /* Shadows - warm-toned */
   --shadow-sm: 0 1px 2px oklch(0.25 0.03 100 / 0.08);
-  --shadow-md: 0 6px 20px oklch(0.25 0.03 100 / 0.08);
-  --shadow-lg: 0 16px 40px oklch(0.25 0.03 100 / 0.12);
+  --shadow-md: 0 6px 20px oklch(0.25 0.03 100 / 0.1);
+  --shadow-lg: 0 16px 40px oklch(0.25 0.03 100 / 0.14);
 
   /* Content widths */
   --content-narrow: 640px;
@@ -118,8 +118,8 @@
   --color-gold-highlight: #3a3120;
 
   --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.3);
-  --shadow-md: 0 6px 20px oklch(0 0 0 / 0.25);
-  --shadow-lg: 0 16px 40px oklch(0 0 0 / 0.35);
+  --shadow-md: 0 6px 20px oklch(0 0 0 / 0.35);
+  --shadow-lg: 0 16px 40px oklch(0 0 0 / 0.45);
 }
 
 /* ==========================================================================
@@ -136,6 +136,7 @@
   --text-3xl: clamp(2.5rem, 1rem + 4vw, 4.5rem);
   --text-hero: clamp(2.75rem, 0.5rem + 6vw, 6.5rem);
 
+  /* 4px spacing system */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -171,6 +172,7 @@
   max-width: var(--content-narrow);
 }
 
+/* Section spacing */
 section {
   padding-block: clamp(var(--space-16), 9vw, var(--space-32));
 }
@@ -435,10 +437,8 @@ h3 {
 /* iPhone frame */
 .hero-iphone {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: var(--space-4);
-  position: relative;
 }
 .iphone-frame {
   width: 100%;
@@ -447,7 +447,7 @@ h3 {
   background: #111;
   border-radius: 42px;
   padding: 12px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -492,15 +492,20 @@ h3 {
   border-radius: 10px;
 }
 
-/* Demo overlay label (above phone) */
+/* Demo overlay label */
 .demo-overlay {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 6px 14px;
   border-radius: 999px;
   background: rgba(255,255,255,0.9);
   color: #000;
   font-size: var(--text-xs);
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  pointer-events: none;
 }
 
 /* ==========================================================================
@@ -765,7 +770,7 @@ h3 {
 }
 
 /* ==========================================================================
-   Footer
+   FAQ
    ========================================================================== */
 
 .site-footer {
