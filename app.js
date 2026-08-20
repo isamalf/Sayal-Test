@@ -87,6 +87,50 @@
     });
   }
 
+  /* ---------- Profit counter animation ---------- */
+  function animateProfitCounter() {
+    var counter = document.getElementById('profit-counter');
+    if (!counter) return;
+    var target = 18.4;
+    var duration = 1500; // ms
+    var startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      // easeOutQuart
+      var eased = 1 - Math.pow(1 - progress, 4);
+      var current = eased * target;
+      counter.textContent = current.toFixed(1);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        counter.textContent = target.toFixed(1) + '';
+      }
+    }
+
+    // Observe when the hero becomes visible
+    var heroVisual = document.querySelector('.hero-visual');
+    if (heroVisual) {
+      var revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              // Start counter once
+              requestAnimationFrame(step);
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+      revealObserver.observe(heroVisual);
+    }
+  }
+
+  // Run after a small delay to ensure DOM is ready
+  setTimeout(animateProfitCounter, 200);
+
   /* ---------- Contact form (Formspree) ---------- */
   var form = document.getElementById('interest-form');
   var statusEl = document.querySelector('[data-form-status]');
@@ -145,7 +189,6 @@
       var data = {
         name: formData.get('name'),
         email: formData.get('email'),
-        goal: formData.get('goal') || '',
         message: formData.get('message') || ''
       };
 
