@@ -1,424 +1,684 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sayal — Invest in U.S. stocks, from Qatar</title>
-  <meta name="description" content="Sayal lets Qatar residents invest in US stocks & ETFs with zero minimums. Fund in QAR, trade with ease." />
-  <meta property="og:title" content="Sayal — Invest in U.S. stocks, from Qatar" />
-  <meta property="og:description" content="Fractional shares, no minimums, QAR funding. Built for everyday investors in Qatar." />
-  <meta property="og:type" content="website" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sayal — Pre‑Seed Pitch Deck</title>
+    <meta name="description" content="Sayal's pre-seed pitch deck – invest in U.S. stocks from Qatar." />
+    <meta property="og:title" content="Sayal — Pre‑Seed Pitch Deck" />
+    <meta property="og:description" content="The complete pre-seed pitch deck for Sayal, the Qatar-first investing app." />
+    <meta property="og:type" content="website" />
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFCYG6K8Q2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-SFCYG6K8Q2');
-  </script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFCYG6K8Q2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-SFCYG6K8Q2');
+    </script>
 
-  <link rel="preconnect" href="https://api.fontshare.com" />
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500&f[]=satoshi@400,500,700&display=swap" />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500&f[]=satoshi@400,500,700&display=swap" />
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 28'%3E%3Cpath d='M2 22c5 2 7-3 7-8s3-9 8-9 6 5 11 5 6-4 10-7' stroke='%231F5E3E' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='38' cy='3' r='3' fill='%231F5E3E'/%3E%3C/svg%3E" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 28'%3E%3Cpath d='M2 22c5 2 7-3 7-8s3-9 8-9 6 5 11 5 6-4 10-7' stroke='%231F5E3E' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='38' cy='3' r='3' fill='%231F5E3E'/%3E%3C/svg%3E" />
 
-  <link rel="stylesheet" href="./base.css" />
-  <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+        /* pitch-deck specific overrides */
+        .pitch-deck-hero {
+            padding-top: clamp(var(--space-12), 6vw, var(--space-20));
+            padding-bottom: var(--space-16);
+            background: var(--color-surface-offset);
+            border-bottom: 1px solid var(--color-divider);
+        }
+        .pitch-deck-hero h1 {
+            font-size: var(--text-2xl);
+            max-width: 20ch;
+        }
+        .pitch-deck-hero .section-lede {
+            max-width: 56ch;
+        }
+
+        .pitch-slide {
+            padding-block: var(--space-12);
+            border-bottom: 1px solid var(--color-divider);
+        }
+        .pitch-slide:last-of-type {
+            border-bottom: none;
+        }
+        .pitch-slide .slide-number {
+            font-family: var(--font-display);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-primary);
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-2);
+        }
+        .pitch-slide h2 {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+        }
+        .pitch-slide h3 {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            margin-top: var(--space-6);
+            margin-bottom: var(--space-2);
+        }
+        .pitch-slide h4 {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            font-weight: 700;
+            margin-bottom: var(--space-1);
+        }
+        .pitch-slide p,
+        .pitch-slide li {
+            color: var(--color-text-muted);
+            max-width: 68ch;
+        }
+        .pitch-slide ul,
+        .pitch-slide ol {
+            padding-left: var(--space-6);
+            margin-top: var(--space-2);
+        }
+        .pitch-slide li {
+            margin-bottom: var(--space-2);
+        }
+        .pitch-slide .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-6);
+        }
+        .pitch-slide .stat-grid .stat-item {
+            border-top: 2px solid var(--color-primary);
+            padding-top: var(--space-3);
+        }
+        .pitch-slide .stat-grid .stat-item .number {
+            font-family: var(--font-display);
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--color-text);
+        }
+        .pitch-slide .stat-grid .stat-item .label {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+        }
+
+        .pitch-slide .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-8);
+            margin-top: var(--space-6);
+        }
+        .pitch-slide .two-col .col {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .pitch-slide .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-8);
+            margin-top: var(--space-6);
+        }
+        .pitch-slide .team-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+        }
+        .pitch-slide .team-card h4 {
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-1);
+        }
+        .pitch-slide .team-card .role {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: var(--space-3);
+        }
+        .pitch-slide .team-card p {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+        }
+
+        .pitch-slide .competition-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--text-sm);
+            margin-top: var(--space-6);
+        }
+        .pitch-slide .competition-table th,
+        .pitch-slide .competition-table td {
+            padding: var(--space-3) var(--space-4);
+            border-bottom: 1px solid var(--color-divider);
+            text-align: left;
+            vertical-align: top;
+        }
+        .pitch-slide .competition-table th {
+            font-weight: 600;
+            color: var(--color-text);
+            background: var(--color-surface-offset);
+        }
+        .pitch-slide .competition-table td {
+            color: var(--color-text-muted);
+        }
+        .pitch-slide .competition-table .highlight-row td {
+            background: var(--color-primary-highlight);
+            color: var(--color-text);
+            font-weight: 600;
+        }
+        .pitch-slide .competition-table .highlight-row td a {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .pitch-slide .chip {
+            display: inline-block;
+            background: var(--color-primary-highlight);
+            color: var(--color-primary);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            margin-right: var(--space-2);
+        }
+
+        .pitch-slide .budget-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-6);
+            margin-top: var(--space-6);
+        }
+        .pitch-slide .budget-item {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid var(--color-divider);
+        }
+        .pitch-slide .budget-item .label {
+            color: var(--color-text-muted);
+        }
+        .pitch-slide .budget-item .value {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            text-decoration: none;
+            margin-top: var(--space-4);
+        }
+        .back-link:hover {
+            color: var(--color-text);
+        }
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .pitch-slide .two-col {
+                grid-template-columns: 1fr;
+                gap: var(--space-4);
+            }
+            .pitch-slide .team-grid {
+                grid-template-columns: 1fr;
+            }
+            .pitch-slide .budget-grid {
+                grid-template-columns: 1fr;
+            }
+            .pitch-slide .competition-table {
+                font-size: var(--text-xs);
+            }
+            .pitch-slide .competition-table th,
+            .pitch-slide .competition-table td {
+                padding: var(--space-2) var(--space-2);
+            }
+            .pitch-slide .stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .pitch-slide .competition-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- Icon sprite defs (patterns) -->
-  <svg width="0" height="0" style="position:absolute">
-    <defs>
-      <pattern id="dot-grid" width="22" height="22" patternUnits="userSpaceOnUse">
-        <circle cx="2" cy="2" r="1.4" fill="currentColor" opacity="0.35" />
-      </pattern>
-    </defs>
-  </svg>
+    <!-- Icon sprite defs -->
+    <svg width="0" height="0" style="position:absolute">
+        <defs>
+            <pattern id="dot-grid" width="22" height="22" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.4" fill="currentColor" opacity="0.35" />
+            </pattern>
+        </defs>
+    </svg>
 
-  <header class="site-header" data-header>
-    <nav class="nav container" aria-label="Primary">
-      <a href="#main" class="logo" aria-label="Sayal home">
-        <svg viewBox="0 0 40 28" fill="none" aria-hidden="true">
-          <path d="M2 22c5 2 7-3 7-8s3-9 8-9 6 5 11 5 6-4 10-7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
-          <circle cx="38" cy="3" r="2.6" fill="currentColor" />
-        </svg>
-        Sayal
-      </a>
-
-      <div class="nav-links">
-        <a href="#how-it-works">How it works</a>
-        <a href="#why-sayal">Why Sayal</a>
-        <a href="#opportunity">The opportunity</a>
-        <a href="#demo">Try the demo</a>
-        <a href="#contact">Contact</a>
-        <a href="#faq">FAQ</a>
-      </div>
-
-      <div class="nav-actions">
-        <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <a href="#contact" class="btn btn-primary">Get in touch</a>
-        <button class="nav-toggle" data-menu-toggle aria-label="Open menu" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        </button>
-      </div>
-    </nav>
-  </header>
-  <div class="mobile-menu" data-mobile-menu>
-    <a href="#how-it-works" data-menu-link>How it works</a>
-    <a href="#why-sayal" data-menu-link>Why Sayal</a>
-    <a href="#opportunity" data-menu-link>The opportunity</a>
-    <a href="#demo" data-menu-link>Try the demo</a>
-    <a href="#contact" data-menu-link>Contact</a>
-    <a href="#faq" data-menu-link>FAQ</a>
-    <a href="#contact" class="btn btn-primary" data-menu-link>Get in touch</a>
-  </div>
-
-  <main id="main">
-    <!-- ================= HERO ================= -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Coming soon to <span style="color:#8B1A1A;">Qatar</span></p>
-          <h1>Invest in <em>U.S. stocks</em> – from your phone.</h1>
-          <p>
-            Invest in US stocks and ETFs with zero minimums. Fund instantly in QAR, trade with ease – whether you're a first‑timer or a seasoned trader.
-          </p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">
-              Get in touch
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    <!-- ================= HEADER ================= -->
+    <header class="site-header" data-header>
+        <nav class="nav container" aria-label="Primary">
+            <a href="./index.html" class="logo" aria-label="Sayal home">
+                <svg viewBox="0 0 40 28" fill="none" aria-hidden="true">
+                    <path d="M2 22c5 2 7-3 7-8s3-9 8-9 6 5 11 5 6-4 10-7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="38" cy="3" r="2.6" fill="currentColor" />
+                </svg>
+                Sayal
             </a>
-            <a href="#demo" class="btn btn-secondary">Try the demo</a>
-          </div>
-          <div class="hero-trust">
-            <span>Built for <span style="color:#8B1A1A;">Qatar</span> residents – early access opening soon</span>
-          </div>
-        </div>
 
-        <!-- Hero Visual – static stock chart with profit counter -->
-        <div class="hero-visual" data-reveal>
-          <svg viewBox="0 0 480 520" fill="none" aria-hidden="true">
-            <rect x="0" y="0" width="480" height="520" rx="28" fill="var(--color-surface-offset)" />
-            <rect x="0" y="0" width="480" height="520" rx="28" fill="url(#dot-grid)" style="color: var(--color-text-faint)" />
-
-            <!-- Upward stock chart line – static -->
-            <path
-              d="M60 400 L120 350 L180 370 L220 280 L280 200 L340 230 L400 120 L440 70"
-              stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
-            <!-- Shaded area under the curve -->
-            <path d="M60 400 L120 350 L180 370 L220 280 L280 200 L340 230 L400 120 L440 70 L440 420 L60 420 Z"
-              fill="var(--color-primary)" opacity="0.1" />
-
-            <!-- Markers -->
-            <circle cx="120" cy="350" r="6" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
-            <circle cx="220" cy="280" r="6" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
-            <circle cx="280" cy="200" r="6" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
-            <circle cx="400" cy="120" r="6" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="3" />
-            <circle cx="440" cy="70" r="8" fill="var(--color-primary)" />
-
-            <!-- Labels -->
-            <text x="60" y="420" font-family="var(--font-body)" font-size="12" fill="var(--color-text-faint)">Jan</text>
-            <text x="440" y="90" font-family="var(--font-body)" font-size="12" fill="var(--color-primary)">Now</text>
-          </svg>
-
-          <!-- Profit card with animated counter – now the % is inside the span -->
-<div class="hero-card">
-  <div class="hero-card-icon">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
-  </div>
-  <div>
-    <strong><span id="profit-counter">0.0%</span></strong>
-    <span>Portfolio growth (YTD)</span>
-  </div>
-</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= DEMO SECTION ================= -->
-    <section id="demo" class="demo-section">
-      <div class="container demo-wrapper">
-        <div class="demo-header-text">
-          <p class="eyebrow" style="text-align:center;">Interactive demo</p>
-          <h2 class="section-title" data-reveal style="text-align:center; max-width: none;">See the app in action</h2>
-          <p class="section-lede" data-reveal style="text-align:center; max-width: 60ch; margin-inline: auto;">Explore the full Sayal experience – fund, trade, and track all in one place.</p>
-          <div class="demo-note">
-            <p>For the best experience, we recommend using a laptop. Prefer a personal walkthrough? <a href="#contact">Book a 1:1 session</a> or <a href="#contact">get early access</a> – we'd love to show you around.</p>
-          </div>
-        </div>
-
-        <div class="demo-container" data-reveal>
-          <div class="iphone-frame">
-            <div class="iphone-screen">
-              <iframe src="http://localhost:56629/" frameborder="0" allow="geolocation; microphone; camera; midi; encrypted-media" loading="lazy"></iframe>
-            </div>
-            <div class="iphone-home-indicator"></div>
-          </div>
-          <div class="demo-features">
-            <div class="demo-feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4.5 8-11.5V5l-8-3-8 3v5.5C4 17.5 12 22 12 22Z"/></svg>
-              <div><strong>Fractional shares</strong> – invest in any US stock from QAR 10.</div>
-            </div>
-            <div class="demo-feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-              <div><strong>Real‑time trading</strong> – buy and sell instantly.</div>
-            </div>
-            <div class="demo-feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
-              <div><strong>QAR deposits</strong> – fund with riyals, trade in dollars.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= VALUE STRIP ================= -->
-    <section class="value-strip">
-      <div class="container value-strip-grid" data-reveal="stagger">
-        <div class="value-item">
-          <span class="value-number">01</span>
-          <p>Invest in US stocks and ETFs with as little as QAR 10. No account minimums.</p>
-        </div>
-        <div class="value-item">
-          <span class="value-number">02</span>
-          <p>Fund instantly in QAR via local bank transfer. No hidden fees, no currency headaches.</p>
-        </div>
-        <div class="value-item">
-          <span class="value-number">03</span>
-          <p>Trade anytime – day or night. A sleek, intuitive interface built for everyone.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= HOW IT WORKS ================= -->
-    <section id="how-it-works">
-      <div class="container">
-        <p class="eyebrow">How it works</p>
-        <h2 class="section-title" data-reveal>Start investing in minutes, not weeks.</h2>
-        <p class="section-lede" data-reveal>No paperwork at a bank branch, no minimum deposit – just download, fund, and invest.</p>
-
-        <div class="steps" data-reveal="stagger">
-          <div class="step">
-            <span class="step-index">01</span>
-            <div class="step-body">
-              <h3>Download the app</h3>
-              <p>Get Sayal on iOS or Android – it's free and takes less than 2 minutes to set up.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span class="step-index">02</span>
-            <div class="step-body">
-              <h3>Fund your wallet in QAR</h3>
-              <p>Transfer Qatari riyals directly from your local bank account. We handle the conversion at competitive rates.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span class="step-index">03</span>
-            <div class="step-body">
-              <h3>Invest in US stocks</h3>
-              <p>Search for any US stock or ETF – buy a fraction of a share with zero commission. Own a piece of the world's best companies.</p>
-            </div>
-          </div>
-          <div class="step">
-            <span class="step-index">04</span>
-            <div class="step-body">
-              <h3>Track, trade, repeat</h3>
-              <p>Monitor your portfolio, set alerts, and trade as often as you like – all from one beautiful dashboard.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= WHY SAYAL ================= -->
-    <section id="why-sayal">
-      <div class="container">
-        <p class="eyebrow">Why Sayal</p>
-        <h2 class="section-title" data-reveal>US market access, built for Qatar.</h2>
-
-        <div class="why-grid">
-          <div class="why-callout" data-reveal>
-            <svg class="why-callout-pattern" viewBox="0 0 400 300" fill="none" aria-hidden="true">
-              <rect width="400" height="300" fill="url(#dot-grid)" style="color: var(--color-text-inverse)" />
-            </svg>
-            <div>
-              <h3>We make US markets accessible to everyone.</h3>
-              <p>No more minimums, no more bank paperwork. Sayal gives you the same trading power as institutional investors – from your pocket.</p>
-            </div>
-            <a href="#contact" class="btn btn-secondary btn-why-callout">Get in touch</a>
-          </div>
-
-          <div class="why-list">
-            <div class="why-list-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4.5 8-11.5V5l-8-3-8 3v5.5C4 17.5 12 22 12 22Z"/></svg>
-              <div>
-                <h4>Fractional shares</h4>
-                <p>Invest in a $1,000 stock with just QAR 10. Build a diversified portfolio without breaking the bank.</p>
-              </div>
-            </div>
-            <div class="why-list-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-              <div>
-                <h4>Zero minimums</h4>
-                <p>Start with any amount. No hidden fees, no minimum balance – invest as much or as little as you want.</p>
-              </div>
-            </div>
-            <div class="why-list-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
-              <div>
-                <h4>QAR funding, US trading</h4>
-                <p>Deposit in riyals, trade in dollars – we handle the conversion seamlessly, so you don't have to think about it.</p>
-              </div>
-            </div>
-            <div class="why-list-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7l-9-5Z"/></svg>
-              <div>
-                <h4>Built for active traders</h4>
-                <p>Real‑time quotes, advanced order types, and a sleek interface – designed for the modern investor.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= OPPORTUNITY ================= -->
-    <section id="opportunity">
-      <div class="opportunity container--wide">
-        <div class="opportunity-inner">
-          <p class="eyebrow">The opportunity</p>
-          <h2 class="section-title" data-reveal>Qatar is wealthy, but access to US stocks is still broken.</h2>
-          <p class="section-lede" data-reveal>Qatar ranks among the top 10 countries by GDP per capita – yet most residents can't easily buy US stocks without facing high minimums, complex paperwork, and legacy bank processes. Sayal changes that.</p>
-
-          <div class="opportunity-grid" data-reveal="stagger">
-            <div class="stat">
-              <div class="stat-number">Top<span class="unit">10</span></div>
-              <p>Qatar's GDP per capita puts it among the world's richest – but investing in US markets remains inaccessible for the majority.</p>
-              <cite>Source: <a href="https://thepeninsulaqatar.com/article/19/12/2025/qatar-consolidates-position-among-forbes-wealthiest-nations-list" target="_blank" rel="noopener noreferrer">Forbes India / The Peninsula Qatar, 2025</a></cite>
-            </div>
-            <div class="stat">
-              <div class="stat-number">$5,000<span class="unit">min.</span></div>
-              <p>That's what traditional banks typically require to open a US brokerage account. Sayal removes that barrier entirely.</p>
-              <cite>Source: <a href="https://www.dohabank.com.qa/treasury-and-investments/international-brokerage/" target="_blank" rel="noopener noreferrer">Doha Bank, International Brokerage</a></cite>
-            </div>
-            <div class="stat">
-              <div class="stat-number">~10<span class="unit">% / yr</span></div>
-              <p>The S&P 500's long‑term average return – now within reach for every Qatari resident, regardless of their starting capital.</p>
-              <cite>Source: <a href="https://www.fidelity.com/learning-center/trading-investing/sp-500-average-return" target="_blank" rel="noopener noreferrer">Fidelity</a></cite>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-    <section id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy" data-reveal>
-          <p class="eyebrow">Contact us</p>
-          <h2>Have questions or want early access? Let's talk.</h2>
-          <p>Whether you're curious about the product, want a personal walkthrough, or are ready to join the early access list – we'd love to hear from you.</p>
-          <div class="contact-note">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            <span>We'll respond within 24 hours.</span>
-          </div>
-        </div>
-
-        <div class="form-card" data-reveal>
-          <form id="interest-form" novalidate>
-            <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
-
-            <div class="form-row">
-              <label for="name">Full name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
-              <span class="form-error">Please enter your name.</span>
-            </div>
-            <div class="form-row">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required />
-              <span class="form-error">Please enter a valid email.</span>
-            </div>
-            <div class="form-row">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Questions, feedback, or just say hi"></textarea>
+            <div class="nav-links">
+                <a href="./index.html#how-it-works">How it works</a>
+                <a href="./index.html#why-sayal">Why Sayal</a>
+                <a href="./index.html#opportunity">The opportunity</a>
+                <a href="./pitch-deck.html" aria-current="page" style="color:var(--color-primary);font-weight:600;">Pitch Deck</a>
+                <a href="./index.html#demo">Try the demo</a>
+                <a href="./index.html#contact">Contact</a>
+                <a href="./index.html#faq">FAQ</a>
             </div>
 
-            <button type="submit" class="btn btn-primary form-submit">
-              <span data-submit-label>Send message</span>
-            </button>
-            <div class="form-status" data-form-status role="status"></div>
-          </form>
+            <div class="nav-actions">
+                <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="./index.html#contact" class="btn btn-primary">Get in touch</a>
+                <button class="nav-toggle" data-menu-toggle aria-label="Open menu" aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-          <div class="form-success" data-form-success>
-            <div class="form-success-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-            </div>
-            <h3>Message sent.</h3>
-            <p>Thanks for reaching out – we'll get back to you shortly.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FAQ ================= -->
-    <section id="faq">
-      <div class="container container--narrow">
-        <p class="eyebrow">FAQ</p>
-        <h2 class="section-title" data-reveal>Quick answers.</h2>
-        <div class="steps" data-reveal="stagger" style="margin-top: var(--space-10)">
-          <div class="step" style="grid-template-columns: 1fr;">
-            <div class="step-body">
-              <h3>Can I invest in fractional shares?</h3>
-              <p>Yes – you can invest in any US stock or ETF for as little as QAR 10. Fractional shares make investing accessible to everyone.</p>
-            </div>
-          </div>
-          <div class="step" style="grid-template-columns: 1fr;">
-            <div class="step-body">
-              <h3>Is there a minimum deposit?</h3>
-              <p>No. You can start with any amount – there's no minimum balance required.</p>
-            </div>
-          </div>
-          <div class="step" style="grid-template-columns: 1fr;">
-            <div class="step-body">
-              <h3>Who is Sayal for?</h3>
-              <p>Anyone in Qatar who wants to invest in US markets – from complete beginners to active traders. We make it simple, fast, and affordable.</p>
-            </div>
-          </div>
-          <div class="step" style="grid-template-columns: 1fr;">
-            <div class="step-body">
-              <h3>When can I start?</h3>
-              <p>We're in early access. <a href="#contact" style="color:var(--color-primary);font-weight:600;text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s;" onmouseover="this.style.borderBottomColor='var(--color-primary)'" onmouseout="this.style.borderBottomColor='transparent'">Reach out to us</a> and we'll invite you as soon as we go live.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <svg viewBox="0 0 40 28" fill="none" aria-hidden="true">
-          <path d="M2 22c5 2 7-3 7-8s3-9 8-9 6 5 11 5 6-4 10-7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
-          <circle cx="38" cy="3" r="2.6" fill="currentColor" />
-        </svg>
-        <span>Sayal</span>
-      </div>
-      <div class="footer-links">
-        <a href="#how-it-works">How it works</a>
-        <a href="#opportunity">The opportunity</a>
-        <a href="#demo">Try the demo</a>
-        <a href="#contact">Get in touch</a>
-      </div>
-      <p class="footer-meta">© 2026 Sayal. Invest in US stocks, from Qatar.</p>
+    <div class="mobile-menu" data-mobile-menu>
+        <a href="./index.html#how-it-works" data-menu-link>How it works</a>
+        <a href="./index.html#why-sayal" data-menu-link>Why Sayal</a>
+        <a href="./index.html#opportunity" data-menu-link>The opportunity</a>
+        <a href="./pitch-deck.html" data-menu-link style="color:var(--color-primary);font-weight:600;">Pitch Deck</a>
+        <a href="./index.html#demo" data-menu-link>Try the demo</a>
+        <a href="./index.html#contact" data-menu-link>Contact</a>
+        <a href="./index.html#faq" data-menu-link>FAQ</a>
+        <a href="./index.html#contact" class="btn btn-primary" data-menu-link>Get in touch</a>
     </div>
-  </footer>
 
-  <script src="./app.js" defer></script>
+    <!-- ================= MAIN ================= -->
+    <main id="main">
+
+        <!-- ===== HERO ===== -->
+        <section class="pitch-deck-hero">
+            <div class="container">
+                <p class="eyebrow">Pre‑Seed Pitch Deck</p>
+                <h1>Sayal — Investing made easy for Qatar.</h1>
+                <p class="section-lede">A mobile-first investing app for Qatar: U.S. stocks at launch, Qatari equities onboarding right after.</p>
+                <a href="./index.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back to homepage
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 1: THE PROBLEM ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">01</p>
+                <h2>The Problem</h2>
+                <h3 style="font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-4);">Qatar's savers have nowhere modern to invest.</h3>
+                <ul>
+                    <li><strong>QAR 100–5,000</strong> typical minimum deposit at Qatar's legacy brokerage desks, plus an in-person branch visit to open an account.</li>
+                    <li><strong>Clunky, dated apps</strong> — Incumbent trading apps (QNBFS, and similar bank-run platforms) carry manual NIN/KYC steps and consistently poor app-store ratings.</li>
+                    <li><strong>No single home for U.S. + GCC stocks</strong> — Investors juggle separate, friction-heavy accounts to hold both American names and regional exchanges like the QSE.</li>
+                    <li><strong>Global brokers skip Qatar entirely</strong> — IBKR and eToro are technically reachable, but neither has a Qatar entity, QAR funding rails, or local support.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 2: THE SOLUTION ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">02</p>
+                <h2>One app to trade and invest, built for Qatar first.</h2>
+                <p>A mobile-first trading and investing app that lets anyone in Qatar fund in QAR and trade U.S. stocks in minutes today, with no branch visit, no high minimums, and no ads.</p>
+                <div class="two-col" style="margin-top:var(--space-6);">
+                    <div class="col">
+                        <h4>🇺🇸 U.S. markets first, Qatar right behind</h4>
+                        <p>Trade U.S. stocks today; Qatari equities onboarding begins right after our first users, through a bank or QSE partnership.</p>
+                    </div>
+                    <div class="col">
+                        <h4>🇶🇦 Fund in QAR, instantly</h4>
+                        <p>Local bank rails replace wire transfers and FX friction. Deposit and see it invested the same day.</p>
+                    </div>
+                    <div class="col">
+                        <h4>⚡ Open an account in minutes</h4>
+                        <p>Fully digital onboarding and KYC: no paperwork, no branch visit, no waiting in line.</p>
+                    </div>
+                    <div class="col">
+                        <h4>📈 No ads, ever</h4>
+                        <p>Sayal earns when you invest, not when you're distracted.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 3: HOW IT WORKS ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">03</p>
+                <h2>How it works</h2>
+                <div style="display:flex;flex-direction:column;gap:var(--space-6);margin-top:var(--space-4);">
+                    <div style="display:grid;grid-template-columns:48px 1fr;gap:var(--space-4);align-items:start;">
+                        <span style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:var(--color-primary);">01</span>
+                        <div><strong>Sign up &amp; verify</strong><br><span style="color:var(--color-text-muted);">Digital KYC in minutes using a Qatar ID or passport, no branch visit.</span></div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:48px 1fr;gap:var(--space-4);align-items:start;">
+                        <span style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:var(--color-primary);">02</span>
+                        <div><strong>Fund with QAR</strong><br><span style="color:var(--color-text-muted);">Local bank transfer or card, no wires and no FX conversion friction.</span></div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:48px 1fr;gap:var(--space-4);align-items:start;">
+                        <span style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:var(--color-primary);">03</span>
+                        <div><strong>Invest</strong><br><span style="color:var(--color-text-muted);">Fractional U.S. shares today; Qatari equities onboarding starts right after launch, via a bank/QSE partnership.</span></div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:48px 1fr;gap:var(--space-4);align-items:start;">
+                        <span style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:var(--color-primary);">04</span>
+                        <div><strong>Track &amp; withdraw</strong><br><span style="color:var(--color-text-muted);">Real-time portfolio view; cash out to your bank anytime.</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 4: MARKET OPPORTUNITY ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">04</p>
+                <h2>Market opportunity</h2>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <div class="number">3.21M</div>
+                        <div class="label">Qatar population, up steadily and 88.4% expatriate, many already invest abroad.</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">99%</div>
+                        <div class="label">Internet penetration; median age 33.5, a digitally fluent, savings-minded population.</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">52%</div>
+                        <div class="label">Of global retail trading volume now comes from the Middle East, not the Americas.</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">62%</div>
+                        <div class="label">Of Qataris save monthly, and want to "invest and grow wealth," per Ipsos.</div>
+                    </div>
+                </div>
+                <div style="margin-top:var(--space-6);padding:var(--space-4) var(--space-6);background:var(--color-surface-offset);border-radius:var(--radius-md);border-left:3px solid var(--color-primary);">
+                    <p style="margin:0;font-weight:600;color:var(--color-text);">A closing window</p>
+                    <p style="margin:0;color:var(--color-text-muted);">Qatar fintech VC funding grew 581% year-over-year to $12.6M in 2024. Regional players are moving fast: thndr (4M+ users in Egypt) is actively expanding across the GCC, and Baraka has built a 10,000+ pre-launch waitlist in the UAE, but neither has meaningfully entered Qatar yet.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 5: REGULATORY PATH ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">05</p>
+                <h2>Regulatory path</h2>
+                <h3>The product is built. Two QFMA licenses are the last step.</h3>
+                <p>Sayal already has a working v3 app, a live landing page, and secured QCB sandbox access with a connected Alpaca sandbox integration. That's roughly 70–80% launch-ready, with two QFMA licenses as the only step left.</p>
+                <div class="two-col" style="margin-top:var(--space-6);">
+                    <div class="col" style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);">
+                        <h4>QFMA: Securities Marketing &amp; Promotion</h4>
+                        <p style="font-size:var(--text-sm);">Lets us legally market and promote investment in securities to Qatar residents.</p>
+                        <ul style="font-size:var(--text-sm);">
+                            <li>Capital: $27,500</li>
+                            <li>Application: $1,375</li>
+                            <li>Licence: $27,500</li>
+                            <li>Renewal (3 yrs): $8,250</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);">
+                        <h4>QFMA: Broker Agent</h4>
+                        <p style="font-size:var(--text-sm);">Lets us act as agent for a licensed broker, such as Alpaca, and handle client instructions.</p>
+                        <ul style="font-size:var(--text-sm);">
+                            <li>Capital: $27,500</li>
+                            <li>Application: $1,375</li>
+                            <li>Licence: $27,500</li>
+                            <li>Renewal (3 yrs): $8,250</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top:var(--space-4);font-size:var(--text-sm);"><strong>Combined cost:</strong> $500 QFC registration plus about $58,250 in QFMA application and licence fees, alongside $55,000 in required paid-up capital held at the firm, not spent.</p>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 6: MARKET SIZE ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">06</p>
+                <h2>A multi-billion dollar market, starting in Qatar.</h2>
+                <div style="background:var(--color-surface-offset);border-radius:var(--radius-lg);padding:var(--space-6);margin-top:var(--space-4);text-align:center;border:1px solid var(--color-border);">
+                    <div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--color-primary);">$14.8B</div>
+                    <div style="color:var(--color-text-muted);font-size:var(--text-sm);">Global neobroker market (2025)</div>
+                    <div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--color-primary);margin-top:var(--space-4);">$52.6B</div>
+                    <div style="color:var(--color-text-muted);font-size:var(--text-sm);">Projected by 2034 at 15.1% CAGR</div>
+                    <div style="margin-top:var(--space-4);padding:var(--space-3);background:var(--color-primary-highlight);border-radius:var(--radius-md);">
+                        <span style="font-weight:700;color:var(--color-text);">Middle East &amp; Africa</span>
+                        <span style="color:var(--color-text-muted);"> — the fastest-growing region at 19.3% CAGR</span>
+                    </div>
+                </div>
+                <p style="margin-top:var(--space-4);font-size:var(--text-sm);color:var(--color-text-muted);">Qatar retail investors already generate 99% of QSE trading volume on a ~177–200B market.</p>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 7: DEMAND ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">07</p>
+                <h2>Qatar has been asking for this, for years.</h2>
+                <div style="background:var(--color-surface-offset);border-radius:var(--radius-md);padding:var(--space-4) var(--space-6);border-left:3px solid var(--color-primary);margin-top:var(--space-4);">
+                    <p style="margin:0;font-style:italic;color:var(--color-text);">"How do I invest in U.S. stocks from Qatar?"</p>
+                    <p style="margin:0;font-size:var(--text-sm);color:var(--color-text-muted);">— r/Qatar threads resurface every year from 2020 through 2026: unprompted, organic demand with no product yet built to answer it.</p>
+                </div>
+                <div class="stat-grid" style="margin-top:var(--space-6);">
+                    <div class="stat-item">
+                        <div class="number">18–19%</div>
+                        <div class="label">Of 18–34 year-olds in Qatar say they specifically want to "invest and grow wealth."</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">4M+</div>
+                        <div class="label">Users on Thndr in Egypt, with $3.4–3.5B traded in 2024: proof the regional model works.</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">10,000+</div>
+                        <div class="label">Pre-launch waitlist Baraka built in the UAE, with 56% of users under 30, before Qatar was even in scope.</div>
+                    </div>
+                </div>
+                <p style="margin-top:var(--space-4);font-size:var(--text-sm);color:var(--color-text-muted);"><strong>The gap:</strong> none of these platforms (Thndr, Baraka, or the legacy banks) has meaningfully entered Qatar yet.</p>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 8: BUSINESS MODEL ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">08</p>
+                <h2>Business model</h2>
+                <h3>Revenue that scales with usage, never with ads.</h3>
+                <div style="background:var(--color-surface-offset);border-radius:var(--radius-lg);padding:var(--space-6);margin-top:var(--space-4);border:1px solid var(--color-border);">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:var(--space-4);">
+                        <div style="text-align:center;">
+                            <div style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:var(--color-primary);">Per-trade</div>
+                            <div style="font-size:var(--text-sm);color:var(--color-text-muted);">Low commission per trade</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:var(--color-primary);">Optional plan</div>
+                            <div style="font-size:var(--text-sm);color:var(--color-text-muted);">Subscription for active traders</div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;color:var(--color-primary);">No ads</div>
+                            <div style="font-size:var(--text-sm);color:var(--color-text-muted);">Earn when you invest, not when distracted</div>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top:var(--space-4);font-size:var(--text-sm);color:var(--color-text-muted);">For context: transaction revenue drove 59% of Robinhood's $4.47–4.5B in FY2025 revenue, validating that fair, usage-based fees can build a large, durable business without advertising.</p>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 9: COMPETITION ===== -->
+        <section class="pitch-slide">
+            <div class="container">
+                <p class="slide-number">09</p>
+                <h2>No one has built a Qatar-native path from U.S. stocks to local equities.</h2>
+                <div style="overflow-x:auto;margin-top:var(--space-4);">
+                    <table class="competition-table">
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Qatar Presence</th>
+                                <th>US + GCC Coverage</th>
+                                <th>Scale / Funding</th>
+                                <th>Fee Model</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Baraka</td><td>GCC-wide, no Qatar entity</td><td>US: yes – GCC: yes</td><td>~$25–26M raised</td><td>Tiered $0–$20/mo + $1/trade</td></tr>
+                            <tr><td>Sarwa</td><td>UAE-centric</td><td>US: robo/stocks – GCC: limited</td><td>~$25–26.5M raised, $1B+ AUM</td><td>Robo-advisory fee, $500 min</td></tr>
+                            <tr><td>StashAway</td><td>Not present</td><td>US: robo only – GCC: limited</td><td>~$75–76M raised</td><td>Robo AUM-based fee</td></tr>
+                            <tr><td>thndr</td><td>Expanding to GCC, not Qatar yet</td><td>US: yes – GCC: expanding</td><td>4M+ users (Egypt)</td><td>Low commission-based</td></tr>
+                            <tr><td>Qatar legacy brokers</td><td>Native, bank-run</td><td>US: high friction – GCC (QSE): yes</td><td>Incumbent bank-backed</td><td>High minimums, branch KYC</td></tr>
+                            <tr><td>IBKR / eToro</td><td>No local entity or QAR rails</td><td>US: yes – GCC: limited</td><td>Global scale</td><td>Global fee schedule, no local support</td></tr>
+                            <tr class="highlight-row"><td><strong>Sayal</strong></td><td><strong>Qatar-first, launching now</strong></td><td><strong>US: live – Qatar right after launch</strong></td><td><strong>Raising pre-seed</strong></td><td><strong>Per-trade fee + optional plan, no ads</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 10: POSITIONING ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">10</p>
+                <h2>Our edge: Qatar-first, U.S. now, Qatar equities right after.</h2>
+                <ul style="margin-top:var(--space-4);">
+                    <li><strong>Category-defining position</strong> — The first Qatar-native trading app, with a direct path to add QSE equities through a bank or exchange partnership.</li>
+                    <li><strong>Regulatory-first approach</strong> — QCB sandbox access secured; QFC registration and both QFMA licenses (Securities Marketing &amp; Promotion, Broker Agent) already in motion, not an afterthought.</li>
+                    <li><strong>Founder-market fit</strong> — Isam (VC/PE background, product and engineering) and Faisal (accounting, licensing and regulatory understanding) both grew up in Qatar.</li>
+                    <li><strong>A window that's open now</strong> — Competitors are circling the GCC or centered on the UAE, and nobody has committed to Qatar yet.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 11: TIMELINE ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">11</p>
+                <h2>From a working app to public launch: licensing is the last gate.</h2>
+                <div style="display:flex;flex-wrap:wrap;gap:var(--space-4);margin-top:var(--space-6);">
+                    <div style="flex:1;min-width:140px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4);text-align:center;">
+                        <div style="font-weight:700;color:var(--color-primary);">Now</div>
+                        <div style="font-size:var(--text-sm);color:var(--color-text-muted);">Working v3 app, QCB sandbox, Alpaca integration</div>
+                    </div>
+                    <div style="flex:1;min-width:140px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4);text-align:center;">
+                        <div style="font-weight:700;color:var(--color-primary);">6 months</div>
+                        <div style="font-size:var(--text-sm);color:var(--color-text-muted);">Licensing complete &amp; Qatar launch</div>
+                    </div>
+                    <div style="flex:1;min-width:140px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4);text-align:center;">
+                        <div style="font-weight:700;color:var(--color-primary);">9 months</div>
+                        <div style="font-size:var(--text-sm);color:var(--color-text-muted);">Qatari equities onboarding underway</div>
+                    </div>
+                    <div style="flex:1;min-width:140px;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4);text-align:center;">
+                        <div style="font-weight:700;color:var(--color-primary);">12 months</div>
+                        <div style="font-size:var(--text-sm);color:var(--color-text-muted);">5,000+ funded accounts</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 12: TEAM ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">12</p>
+                <h2>Team</h2>
+                <h3>Built by two Qatar-raised operators.</h3>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <h4>Isam Al-Fuqaha</h4>
+                        <div class="role">Co-Founder, Product &amp; Engineering</div>
+                        <p>Product &amp; investor relationships. Foster School of Business, University of Washington. VC Summer Analyst at Plug and Play; PE Summer Analyst at Dromedon Capital (London), covering LBO/M&amp;A research on European companies over £100M in revenue. Founder of a mental-health SaaS that raised outside funding. Leads product and engineering for Sayal.</p>
+                    </div>
+                    <div class="team-card">
+                        <h4>Faisal Al Lahham</h4>
+                        <div class="role">Co-Founder, Research &amp; Licensing</div>
+                        <p>Research, licensing &amp; regulatory strategy. Henley Business School, University of Reading, Accounting and Management, on the ICAEW ACA pathway. Corporate Venture Capital extern at HP Inc.; finance and demand-planning experience at QPlastics in Doha. Leads Sayal's competitive research, licensing strategy, and understanding of the regulatory landscape.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 13: BUDGET & MILESTONES ===== -->
+        <section class="pitch-slide">
+            <div class="container container--narrow">
+                <p class="slide-number">13</p>
+                <h2>Budget allocation &amp; milestones</h2>
+                <div class="budget-grid">
+                    <div class="budget-item"><span class="label">Marketing team &amp; Qatar launch campaign</span><span class="value">38%</span></div>
+                    <div class="budget-item"><span class="label">Product &amp; engineering: one additional developer</span><span class="value">24%</span></div>
+                    <div class="budget-item"><span class="label">Office space (1–2 years) &amp; operations</span><span class="value">26%</span></div>
+                    <div class="budget-item"><span class="label">Regulatory licensing: QFC + both QFMA licenses</span><span class="value">12%</span></div>
+                </div>
+                <div style="margin-top:var(--space-6);padding:var(--space-4) var(--space-6);background:var(--color-primary-highlight);border-radius:var(--radius-md);border-left:3px solid var(--color-primary);">
+                    <p style="margin:0;font-weight:600;color:var(--color-text);">Milestone</p>
+                    <p style="margin:0;color:var(--color-text-muted);">Licensing complete and Qatar public launch within 6 months, 5,000+ funded accounts within 12 months.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 14: CLOSING ===== -->
+        <section class="pitch-slide" style="border-bottom:none;padding-bottom:var(--space-16);">
+            <div class="container container--narrow" style="text-align:center;">
+                <div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--color-primary);margin-bottom:var(--space-4);">Investing made easy for Qatar.</div>
+                <div style="display:flex;flex-wrap:wrap;gap:var(--space-6);justify-content:center;font-size:var(--text-sm);color:var(--color-text-muted);">
+                    <span>Isam Al-Fuqaha · <a href="mailto:isamalfuqaha@gmail.com" style="color:var(--color-primary);">isamalfuqaha@gmail.com</a> · <a href="#" style="color:var(--color-primary);">linkedin.com/in/isamalf</a></span>
+                    <span>Faisal Al-Lahham · <a href="mailto:faisalallahham226@gmail.com" style="color:var(--color-primary);">faisalallahham226@gmail.com</a></span>
+                </div>
+                <a href="./index.html" class="back-link" style="margin-top:var(--space-8);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back to homepage
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <svg viewBox="0 0 40 28" fill="none" aria-hidden="true">
+                    <path d="M2 22c5 2 7-3 7-8s3-9 8-9 6 5 11 5 6-4 10-7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="38" cy="3" r="2.6" fill="currentColor" />
+                </svg>
+                <span>Sayal</span>
+            </div>
+            <div class="footer-links">
+                <a href="./index.html#how-it-works">How it works</a>
+                <a href="./index.html#opportunity">The opportunity</a>
+                <a href="./index.html#demo">Try the demo</a>
+                <a href="./pitch-deck.html">Pitch Deck</a>
+                <a href="./index.html#contact">Get in touch</a>
+            </div>
+            <p class="footer-meta">© 2026 Sayal. Invest in US stocks, from Qatar.</p>
+        </div>
+    </footer>
+
+    <script src="./app.js" defer></script>
 </body>
 </html>
